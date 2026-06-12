@@ -1,0 +1,26 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# 复制 package files
+COPY backend-package.json package.json
+COPY package-lock.json .
+
+# 安装依赖
+RUN npm ci --only=production
+
+# 复制源代码
+COPY . .
+
+# 环境变量
+ENV NODE_ENV=production
+
+# 开放端口
+EXPOSE 5000
+
+# 启动应用
+CMD ["npm", "start"]
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:5000/api/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"

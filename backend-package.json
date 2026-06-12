@@ -1,0 +1,41 @@
+{
+  "name": "1xbet-platform-backend",
+  "version": "1.0.0",
+  "description": "1xBet Clone - Complete Backend Platform",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node scripts/seed.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "engines": {
+    "node": "18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "stripe": "^14.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "axios": "^1.4.0",
+    "web3": "^4.0.1",
+    "ethers": "^6.0.0",
+    "express-rate-limit": "^6.7.0",
+    "express-validator": "^7.0.0",
+    "nodemailer": "^6.9.0",
+    "telegraf": "^4.12.0",
+    "multer": "^1.4.5",
+    "helmet": "^7.0.0",
+    "redis": "^4.6.0",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0"
+  }
+}

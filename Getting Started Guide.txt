@@ -1,0 +1,32 @@
+# 1. 配置环境变量
+cd backend && cp .env.example .env
+# 编辑 .env 填入 API 密钥
+
+# 2. 安装依赖 & 启动
+npm install && npm start
+
+# 或 Docker 一键部署
+docker-compose up -d
+
+# 3. 访问
+# 前端: http://localhost:3000
+# API:  http://localhost:5000/api
+1xbet-clone/
+├── frontend/              # 前端（完整1Bet界面）
+│   ├── index.html         # 主页面
+│   └── assets/
+│       ├── css/style.css  # 样式
+│       └── js/app.js      # 交互逻辑
+├── backend/               # Node.js后端API
+│   ├── server.js          # 主入口
+│   ├── routes/            # 7个路由模块
+│   ├── models/            # 5个数据模型
+│   ├── middleware/        # 认证中间件
+│   ├── config/            # 数据库/Redis配置
+│   ├── locales/           # 多语言(EN/CN/KM)
+│   └── bot/               # Telegram Bot
+├── docker-compose.yml     # Docker编排
+├── Dockerfile             # 容器镜像
+├── nginx.conf             # Nginx反向代理
+├── deploy.sh              # 一键部署脚本
+└── README.md              # 文档
